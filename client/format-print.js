@@ -1,4 +1,4 @@
-Template.registerHelper('$.formatCPF', function (cpf, options) {
+Template.registerHelper('formatCPF', function (cpf, options) {
     if(cpf.length != 11) {
         if(options.default)
             return '000.000.000-00';
@@ -8,7 +8,7 @@ Template.registerHelper('$.formatCPF', function (cpf, options) {
     }
 });
 
-Template.registerHelper('$.formatCNPJ', function (cnpj, options) {
+Template.registerHelper('formatCNPJ', function (cnpj, options) {
     if(cnpj.length != 14) {
         if(options.default)
             return '00.000.000/0000-00';
@@ -18,7 +18,7 @@ Template.registerHelper('$.formatCNPJ', function (cnpj, options) {
     }
 });
 
-Template.registerHelper('$.formatPhone', function (phone, options) {
+Template.registerHelper('formatPhone', function (phone, options) {
     if(phone.length == 11) {
         return "(" + phone.substring(0,2) + ") " + phone.substring(2,3) + " " + phone.substring(3,7) + "-" + phone.substring(7);
     } else if(phone.length == 10){
@@ -30,7 +30,7 @@ Template.registerHelper('$.formatPhone', function (phone, options) {
     }
 });
 
-Template.registerHelper('$.formatPersonDoc', function (personDoc) {
+Template.registerHelper('formatPersonDoc', function (personDoc) {
     if(personDoc.length == 11) {
         return personDoc.substring(0,3) + "." + personDoc.substring(3,6) + "." + personDoc.substring(6,9) + "-" + personDoc.substring(9);
     } else if(personDoc.length == 14) {
@@ -40,7 +40,7 @@ Template.registerHelper('$.formatPersonDoc', function (personDoc) {
     }
 });
 
-Template.registerHelper('$.formatDate', function (date, options) {
+Template.registerHelper('formatDate', function (date, options) {
     var localeDate = date.toLocaleDateString().split("/");
     var day   = localeDate[1];
     var month = localeDate[0];
